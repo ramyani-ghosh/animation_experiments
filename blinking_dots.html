@@ -17,7 +17,7 @@
                 width:700px;
                 height:700px;
                 margin-left:550px;;
-                margin-top:110px;
+                margin-top:180px;
                 display: grid;
                 grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
                 grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
@@ -30,26 +30,8 @@
                 height : 20px;
                 width : 2px;
                 background-color : whitesmoke;
-                margin: auto;
+                margin:auto;
                 margin-top: 27px;
-            }
-            #caption{
-                color: rgba(255,255,255,0.8);
-                font-size: 20px;
-                position: absolute;
-                margin-top: 840px;
-                margin-left: 47%;
-                font-weight: 90;
-                font-family: Arial, sans-serif;
-            }
-            #resetButton{
-                width:40px;
-                height:40px;
-                position: absolute;
-                right:440px;
-                margin-top: 140px;
-                opacity:50%;
-                cursor: pointer;
             }
         </style>
 
@@ -60,21 +42,9 @@
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="restart.png" alt= "reset">
-        <p id="caption">Tilting Sticks</p>
     </body>
 
     <script>
-
-        var reset = document.getElementById("resetButton");
-        reset.onclick = function() {
-            var units = document.getElementsByClassName("unit");
-            for(var i =0; i<100;i++)
-            {
-                units[i].style.transform = "rotate(0deg)";
-            }
-        }
-
         function makediv()
         {
             var newcontainer = document.createElement("div");
@@ -86,6 +56,7 @@
             }
             newcontainer.appendChild(newunit);
             document.getElementById("container").appendChild(newcontainer);
+            console.log(newcontainer);
 
 
         }
