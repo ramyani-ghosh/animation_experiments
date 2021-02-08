@@ -75,10 +75,22 @@
             <!-- <div class="unit"> </div> -->
         </div>
         <img id= "resetButton" src="restart.png" alt= "reset">
-        <p  id="caption">Tilting Sticks</p>
+        <p  id="caption">Flashing Lights</p>
     </body>
 
     <script>
+        var reset = document.getElementById("resetButton");
+        reset.onclick = function() {
+            var units = document.getElementsByClassName("unit");
+            for(var i =0; i<100;i++)
+            {
+                units[i].style.height = "10px";
+                units[i].style.width = "10px";
+                units[i].style.animationName = "none";
+
+            }
+        }
+
         function makediv()
         {
             var newcontainer = document.createElement("div");
