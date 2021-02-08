@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>
+        </title>
+
+        <style>
+            body{
+                background-color: black;
+            }
+            #container{
+                
+                position: fixed;
+                background-color: rgba(255,255,255,0.3);
+                width:700px;
+                height:700px;
+                margin-left:550px;;
+                margin-top:180px;
+                display: grid;
+                grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+                grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+
+            }
+            #container .con_div{
+                background-color:black;
+            }
+            .unit{
+                height : 20px;
+                width : 2px;
+                background-color : whitesmoke;
+                margin:auto;
+                margin-top: 27px;
+            }
+        </style>
+
+    </head>
+
+
+    <body>
+        <div id = "container">
+            <!-- <div class="unit"> </div> -->
+        </div>
+    </body>
+
+    <script>
+        function makediv()
+        {
+            var newcontainer = document.createElement("div");
+            newcontainer.className= "con_div";
+            var newunit = document.createElement("div");
+            newunit.className= "unit";
+            newcontainer.onmouseover = function() {
+                newunit.style.transform = "rotate(45deg)";
+            }
+            newcontainer.appendChild(newunit);
+            document.getElementById("container").appendChild(newcontainer);
+            console.log(newcontainer);
+
+
+        }
+        for (var i =0; i<100;i++)
+        {
+            makediv();
+        }
+        // var intervalId = window.setInterval(function(){ makediv()}, 1000);
+
+
+    </script>
+
+
+
+</html>
