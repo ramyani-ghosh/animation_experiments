@@ -7,18 +7,18 @@
         </title>
         <link rel="stylesheet" href="style/style.css">
         <style>
-
+            
+            
             @keyframes example {
-                    0% {background-color:#369994;}
-                    15% {background-color: #8bc5d1;}
-                    30% {background-color: #f8cb4a;}
-                    45% {background-color:#ff7926;}
-                    60% {background-color: #944893;}
-                    75% {background-color: #ff8cad;}
-                    90% {background-color: #bdb280;}
-                    100% {background-color: #03969e;}
+                    0% {border-color:rgba(255,255,255,0.9); height : 10px; width : 10px;}
+                    15% {border-color: rgba(190,210,255,1)}
+                    30% {border-color: rgba(190,250,255,1)}
+                    45% {border-color: rgba(130,190,255,1); height : 100px; width : 100px;}
+                    75% {border-color: rgba(190,255,255,1);}
+                    90% {border-color: rgba(190,230,255,1);}
+                    100% {border-color: rgba(255,255,255,0.9);height : 10px; width : 10px;}
             }
-
+           
             #container{
                 position: fixed;
                 background-color: rgba(255,255,255,0.3);
@@ -27,23 +27,24 @@
                 margin-left:550px;;
                 margin-top:110px;
                 display: grid;
-                grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%  ;
-                grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+                grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+                grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
 
             }
             #container .con_div{
                 background-color:black;
             }
             .unit{
-                height : 35px;
-                width : 35px;
-                background-color: rgba(30,30,30,0.3);
+                height : 20px;
+                width : 20px;
+                background-color : black;
                 opacity : 80%;
-                border-radius: 0;
+                border-radius: 50%;
+                border: 3px solid #FFF;
                 margin:auto;
                 margin-top: 27px;
                 animation-name: none;
-                animation-duration: 6s;
+                animation-duration: 5s;
                 animation-iteration-count: infinite;
             }
 
@@ -64,17 +65,17 @@
         <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
         <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
       
-        <p  id="caption">Mosaic Painting</p>
+        <p  id="caption">Bath Bubbles</p>
     </body>
 
     <script>
         var reset = document.getElementById("resetButton");
         reset.onclick = function() {
             var units = document.getElementsByClassName("unit");
-            for(var i =0; i<400;i++)
+            for(var i =0; i<100;i++)
             {
-                units[i].style.height = "35px";
-                units[i].style.width = "35px";
+                units[i].style.height = "40px";
+                units[i].style.width = "40px";
                 units[i].style.animationName = "none";
 
             }
@@ -83,11 +84,11 @@
         var right_arrow = document.getElementById("rightArrow");
         var left_arrow = document.getElementById("leftArrow");
         right_arrow.onclick  =  function(){
-            var url = "bath_bubbles.html";
+            var url = "index.html";
             location.href = url;
         }
         left_arrow.onclick  =  function(){
-            var url = "flipping_tiles.html";
+            var url = "mosaic_painting.html";
             location.href = url;
         }
 
@@ -103,11 +104,11 @@
             
             newcontainer.appendChild(newunit);
             document.getElementById("container").appendChild(newcontainer);
-            
+            console.log(newcontainer);
 
 
         }
-        for (var i =0; i<400;i++)
+        for (var i =0; i<100;i++)
         {
             makediv();
         }
