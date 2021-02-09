@@ -7,22 +7,14 @@
         </title>
         <link rel="stylesheet" href="style/style.css">
         <style>
-           
             
-            @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-6px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            30% { transform: translate(9px, 7px) rotate(0deg); }
-            40% { transform: translate(0px, -3px) rotate(1deg); }
-            50% { transform: translate(-4px, 5px) rotate(-1deg); }
-            60% { transform: translate(8px, 4px) rotate(0deg); }
-            70% { transform: translate(3px, 1px) rotate(-1deg); }
-            80% { transform: translate(-7px, -3px) rotate(1deg); }
-            90% { transform: translate(3px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
+            
+            @keyframes example {
+                    0%{opacity:20; height : 6px; width : 6px;}
+                    50% {opacity: 100%; height : 20px; width : 20px;}
+                    100% {opacity:20%;height : 6px; width : 6px;}
             }
-           
+            
             #container{
                 position: fixed;
                 background-color: rgba(255,255,255,0.3);
@@ -39,14 +31,20 @@
                 background-color:black;
             }
             .unit{
-                height : 3px;
-                width : 37px;
-                background-color :#7d3a00;
-                margin: auto;
+                height : 10px;
+                width : 10px;
+                background-color : whitesmoke;
+                opacity : 20%;
+                border-radius: 50%;
+                margin:auto;
                 margin-top: 27px;
-                animation: none;
+                animation-name: none;
                 animation-duration: 2s;
                 animation-iteration-count: infinite;
+            }
+
+            .unit:hover {
+                animation-name: example;
             }
             
         </style>
@@ -55,39 +53,39 @@
 
 
     <body>
-        <img id= "leftArrow" src="images/left_arrow.png" title= "Previous design">
+        <img id= "leftArrow" src="images/left_arrow.png" alt= "Previous design">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="images/restart.png" title= "Reset pattern">
-        <img id= "rightArrow" src="images/right_arrow.png" title= "Next design">
-
-        <p  id="caption">Shaking Twigs</p>
+        <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
+        <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
+      
+        <p  id="caption">Flashing Lights</p>
     </body>
 
     <script>
-
         var reset = document.getElementById("resetButton");
         reset.onclick = function() {
             var units = document.getElementsByClassName("unit");
             for(var i =0; i<100;i++)
             {
-                units[i].style.transform = "rotate(0deg)";
-                units[i].style.animation = "none";
+                units[i].style.height = "10px";
+                units[i].style.width = "10px";
+                units[i].style.animationName = "none";
+
             }
         }
 
         var right_arrow = document.getElementById("rightArrow");
         var left_arrow = document.getElementById("leftArrow");
         right_arrow.onclick  =  function(){
-            var url = "bokeh_lens.html";
+            var url = "golden_diamonds.html";
             location.href = url;
         }
         left_arrow.onclick  =  function(){
-            var url = "rising_pins.html";
+            var url = "index.html";
             location.href = url;
         }
-
 
         function makediv()
         {
@@ -96,10 +94,12 @@
             var newunit = document.createElement("div");
             newunit.className= "unit";
             newcontainer.onmouseover = function() {
-                newunit.style.animation="shake 2s infinite";
+                newunit.style.animationName = "example";
             }
+            
             newcontainer.appendChild(newunit);
             document.getElementById("container").appendChild(newcontainer);
+            console.log(newcontainer);
 
 
         }
