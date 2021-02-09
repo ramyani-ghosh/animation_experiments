@@ -7,12 +7,21 @@
         </title>
 
         <style>
+            
+            
+            @keyframes example {
+                    0% {background-color:#369994;height : 40px; width : 40px;}
+                    15% {background-color: #8bc5d1;}
+                    30% {background-color: #f8cb4a;}
+                    45% {background-color:#ff7926;}
+                    60% {background-color: #944893;height : 90px; width : 90px;}
+                    75% {background-color: #fc83c6;}
+                    90% {background-color: #bdb280;}
+                    100% {background-color: #03969e;height : 40px; width : 40px;}
+            }
             @keyframes page_entry{
                 0% {opacity: 0;}
                 100%{opacity:100;}
-            }
-            @keyframes spin { 
-                100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
             }
             body{
                 background-color: black;
@@ -35,14 +44,20 @@
                 background-color:black;
             }
             .unit{
-                height : 30px;
-                width : 4px;
-                background-color : #94d4c7;
-                margin: auto;
+                height : 40px;
+                width : 40px;
+                background-color :rgb(250,240,220);
+                opacity : 50%;
+                border-radius: 50%;
+                margin:auto;
                 margin-top: 27px;
-                animation: none;
-                animation-duration: 2s;
+                animation-name: none;
+                animation-duration: 5s;
                 animation-iteration-count: infinite;
+            }
+
+            .unit:hover {
+                animation-name: example;
             }
             #caption{
                 color: rgba(255,255,255,0.8);
@@ -59,7 +74,7 @@
                 position: absolute;
                 right:450px;
                 margin-top: 150px;
-                opacity:30%;
+                opacity:40%;
                 cursor: pointer;
             }
             #leftArrow{
@@ -82,39 +97,39 @@
 
 
     <body>
-        <img id= "leftArrow" src="images/left_arrow.png" title= "Previous design">
+        <img id= "leftArrow" src="images/left_arrow.png" alt= "Previous design">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="images/restart.png" title= "Reset pattern">
-        <img id= "rightArrow" src="images/right_arrow.png" title= "Next design">
-
-        <p  id="caption">Spinning Lines</p>
+        <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
+        <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
+      
+        <p  id="caption">Bokeh Lens</p>
     </body>
 
     <script>
-
         var reset = document.getElementById("resetButton");
         reset.onclick = function() {
             var units = document.getElementsByClassName("unit");
             for(var i =0; i<100;i++)
             {
-                units[i].style.transform = "rotate(0deg)";
-                units[i].style.animation = "none";
+                units[i].style.height = "40px";
+                units[i].style.width = "40px";
+                units[i].style.animationName = "none";
+
             }
         }
 
         var right_arrow = document.getElementById("rightArrow");
         var left_arrow = document.getElementById("leftArrow");
         right_arrow.onclick  =  function(){
-            var url = "bokeh_lens.html";
+            var url = "index.html";
             location.href = url;
         }
         left_arrow.onclick  =  function(){
-            var url = "golden_diamonds.html";
+            var url = "spinning_lines.html";
             location.href = url;
         }
-
 
         function makediv()
         {
@@ -123,10 +138,12 @@
             var newunit = document.createElement("div");
             newunit.className= "unit";
             newcontainer.onmouseover = function() {
-                newunit.style.animation="spin 4s linear infinite";
+                newunit.style.animationName = "example";
             }
+            
             newcontainer.appendChild(newunit);
             document.getElementById("container").appendChild(newcontainer);
+            console.log(newcontainer);
 
 
         }
