@@ -10,14 +10,9 @@
             
             
             @keyframes example {
-                    0% {background-color:#369994;height : 40px; width : 40px;}
-                    15% {background-color: #8bc5d1;}
-                    30% {background-color: #f8cb4a;}
-                    45% {background-color:#ff7926;}
-                    60% {background-color: #944893;height : 90px; width : 90px;}
-                    75% {background-color: #fc83c6;}
-                    90% {background-color: #bdb280;}
-                    100% {background-color: #03969e;height : 40px; width : 40px;}
+                    0%{opacity:50; height : 5px; width : 5px; background-color: #e3b73d;}
+                    50% {opacity: 100%; height : 7px; width : 7px; background-color: #e3b73d;}
+                    100% {opacity:10%;height : 5px; width : 5px; background-color: #e3b73d;}
             }
             @keyframes page_entry{
                 0% {opacity: 0;}
@@ -36,23 +31,23 @@
                 margin-left:550px;;
                 margin-top:110px;
                 display: grid;
-                grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
-                grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+                grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%  ;
+                grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
 
             }
             #container .con_div{
                 background-color:black;
             }
             .unit{
-                height : 40px;
-                width : 40px;
-                background-color :rgb(250,240,220);
+                height : 5px;
+                width : 5px;
+                background-color :#e3b73d;
                 opacity : 50%;
                 border-radius: 50%;
                 margin:auto;
                 margin-top: 27px;
                 animation-name: none;
-                animation-duration: 5s;
+                animation-duration: 6s;
                 animation-iteration-count: infinite;
             }
 
@@ -104,17 +99,17 @@
         <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
         <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
       
-        <p  id="caption">Bokeh Lens</p>
+        <p  id="caption">Rising Pins</p>
     </body>
 
     <script>
         var reset = document.getElementById("resetButton");
         reset.onclick = function() {
             var units = document.getElementsByClassName("unit");
-            for(var i =0; i<100;i++)
+            for(var i =0; i<400;i++)
             {
-                units[i].style.height = "40px";
-                units[i].style.width = "40px";
+                units[i].style.height = "5px";
+                units[i].style.width = "5px";
                 units[i].style.animationName = "none";
 
             }
@@ -123,11 +118,11 @@
         var right_arrow = document.getElementById("rightArrow");
         var left_arrow = document.getElementById("leftArrow");
         right_arrow.onclick  =  function(){
-            var url = "rising_pins.html";
+            var url = "golden_diamonds.html";
             location.href = url;
         }
         left_arrow.onclick  =  function(){
-            var url = "spinning_lines.html";
+            var url = "bokeh_lens.html";
             location.href = url;
         }
 
@@ -143,11 +138,11 @@
             
             newcontainer.appendChild(newunit);
             document.getElementById("container").appendChild(newcontainer);
-            console.log(newcontainer);
+            
 
 
         }
-        for (var i =0; i<100;i++)
+        for (var i =0; i<400;i++)
         {
             makediv();
         }
