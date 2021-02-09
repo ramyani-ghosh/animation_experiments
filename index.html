@@ -7,11 +7,16 @@
         </title>
 
         <style>
+            @keyframes page_entry{
+                0% {opacity: 0;}
+                100%{opacity:100;}
+            }
             body{
                 background-color: black;
+                animation-name: page_entry;
+                animation-duration: 2s;
             }
             #container{
-                
                 position: fixed;
                 background-color: rgba(255,255,255,0.3);
                 width:700px;
@@ -35,7 +40,7 @@
             }
             #caption{
                 color: rgba(255,255,255,0.8);
-                font-size: 20px;
+                font-size: 17px;
                 position: absolute;
                 margin-top: 840px;
                 margin-left: 47%;
@@ -43,13 +48,27 @@
                 font-family: Arial, sans-serif;
             }
             #resetButton{
-                width:40px;
-                height:40px;
+                width:30px;
+                height:30px;
                 position: absolute;
-                right:440px;
-                margin-top: 140px;
-                opacity:50%;
+                right:450px;
+                margin-top: 150px;
+                opacity:30%;
                 cursor: pointer;
+            }
+            #leftArrow{
+                
+                position: absolute;
+                margin-top:470px;
+                left:40px;
+                opacity: 60%;
+            }
+            #rightArrow{
+                cursor: pointer;
+                position: absolute;
+                margin-top:470px;
+                right:40px;
+                opacity: 80%;
             }
         </style>
 
@@ -57,10 +76,13 @@
 
 
     <body>
+        <img id= "leftArrow" src="images/left_arrow.png" alt= "Previous design">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="restart.png" alt= "reset">
+        <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
+        <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
+
         <p  id="caption">Tilting Sticks</p>
     </body>
 
@@ -74,6 +96,15 @@
                 units[i].style.transform = "rotate(0deg)";
             }
         }
+
+        var right_arrow = document.getElementById("rightArrow");
+        var left_arrow = document.getElementById("leftArrow");
+        
+        right_arrow.onclick  =  function(){
+            var url = "blinking_dots.html";
+            location.href = url;
+        }
+
 
         function makediv()
         {
