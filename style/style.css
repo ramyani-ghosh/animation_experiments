@@ -1,6 +1,13 @@
 @keyframes page_entry{
-    0% {opacity: 0;}
-    100%{opacity:100;}
+    0% {opacity: 0; colour:white}
+    100%{opacity:100; color:white}
+}
+@keyframes flash_instructions{
+    0% {opacity: 0; display: block;}
+    1% {opacity: 100;}
+    2% {opacity: 100;}
+    3% {opacity: 0;}
+    100%{opacity:0; display:none;}
 }
 body{
     background-color: black;
@@ -11,10 +18,23 @@ body{
     color: rgba(255,255,255,0.8);
     font-size: 17px;
     position: absolute;
-    margin-top: 840px;
+    margin-top: 860px;
     margin-left: 47%;
     font-weight: 90;
     font-family: Arial, sans-serif;
+}
+#instructions{
+  
+    color: rgba(255,255,255,0.4);
+    font-size: 40px;
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 47%;
+    font-weight: 90;
+    font-family: Arial, sans-serif;
+    animation: flash_instructions;
+    animation-duration: 300s;
+    animation-iteration-count: infinite;
 }
 #resetButton{
     width:30px;
