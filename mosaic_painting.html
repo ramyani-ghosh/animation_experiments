@@ -7,18 +7,18 @@
         </title>
         <link rel="stylesheet" href="style/style.css">
         <style>
-            
-            
+
             @keyframes example {
-                    0%{opacity:60%; height : 65px; width : 65px; transform: translate( 0px, 0px);}
-                    25% {opacity: 60%; height : 0px; width : 65px; transform:translate( 0px, 35px);}
-                    26% {opacity: 40%; height : 0px; width : 65px; transform:translate( 0px, 35px);}
-                    50% {opacity: 40%; height : 65px; width : 65px; transform:translate( 0px, 0px);}
-                    75% {opacity: 40%; height : 0px; width : 65px; transform:translate( 0px, 35px);}
-                    76% {opacity: 60%; height : 0px; width : 65px; transform:translate( 0px, 35px);}
-                    100% {opacity:60%;height : 65px; width : 65px;}
+                    0% {background-color:#369994;}
+                    15% {background-color: #8bc5d1;}
+                    30% {background-color: #f8cb4a;}
+                    45% {background-color:#ff7926;}
+                    60% {background-color: #944893;}
+                    75% {background-color: #ff8cad;}
+                    90% {background-color: #bdb280;}
+                    100% {background-color: #03969e;}
             }
-            
+
             #container{
                 position: fixed;
                 background-color: rgba(255,255,255,0.3);
@@ -27,26 +27,29 @@
                 margin-left:550px;;
                 margin-top:110px;
                 display: grid;
-                grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
-                grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+                grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%  ;
+                grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
 
             }
             #container .con_div{
                 background-color:black;
             }
             .unit{
-                height : 65px;
-                width : 65px;
-                background-color: #52806f;
-                opacity : 60%;
+                height : 35px;
+                width : 35px;
+                background-color: rgba(30,30,30,0.3);
+                opacity : 80%;
                 border-radius: 0;
                 margin:auto;
                 margin-top: 27px;
                 animation-name: none;
-                animation-duration: 7s;
+                animation-duration: 6s;
                 animation-iteration-count: infinite;
             }
 
+            .unit:hover {
+                animation-name: example;
+            }
             
         </style>
 
@@ -54,7 +57,6 @@
 
 
     <body>
-        <p  id="instructions">Click!</p>
         <img id= "leftArrow" src="images/left_arrow.png" alt= "Previous design">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
@@ -62,17 +64,17 @@
         <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
         <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
       
-        <p  id="caption">Flipping Tiles</p>
+        <p  id="caption">Mosaic Painting</p>
     </body>
 
     <script>
         var reset = document.getElementById("resetButton");
         reset.onclick = function() {
             var units = document.getElementsByClassName("unit");
-            for(var i =0; i<100;i++)
+            for(var i =0; i<400;i++)
             {
-                units[i].style.height = "65px";
-                units[i].style.width = "65px";
+                units[i].style.height = "35px";
+                units[i].style.width = "35px";
                 units[i].style.animationName = "none";
 
             }
@@ -81,11 +83,11 @@
         var right_arrow = document.getElementById("rightArrow");
         var left_arrow = document.getElementById("leftArrow");
         right_arrow.onclick  =  function(){
-            var url = "mosaic_painting.html";
+            var url = "index.html";
             location.href = url;
         }
         left_arrow.onclick  =  function(){
-            var url = "shaking_twigs.html";
+            var url = "flipping_tiles.html";
             location.href = url;
         }
 
@@ -95,17 +97,17 @@
             newcontainer.className= "con_div";
             var newunit = document.createElement("div");
             newunit.className= "unit";
-            newcontainer.onclick = function() {
+            newcontainer.onmouseover = function() {
                 newunit.style.animationName = "example";
             }
             
             newcontainer.appendChild(newunit);
             document.getElementById("container").appendChild(newcontainer);
-            console.log(newcontainer);
+            
 
 
         }
-        for (var i =0; i<100;i++)
+        for (var i =0; i<400;i++)
         {
             makediv();
         }
