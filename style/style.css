@@ -1,5 +1,5 @@
 @keyframes page_entry{
-    0% {opacity: 0; colour:white}
+    0% {opacity: 0; color:white}
     100%{opacity:100; color:white}
 }
 @keyframes flash_instructions{
