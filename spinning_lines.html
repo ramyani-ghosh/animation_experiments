@@ -13,23 +13,24 @@
             }
            
             #container{
-                position: fixed;
+                position: relative;
                 background-color: rgba(255,255,255,0.3);
-                width:700px;
-                height:700px;
-                margin-left:550px;;
-                margin-top:110px;
+                width:600px;
+                height:600px;
+                left:27% ;
+                margin-top:2%;
                 display: grid;
                 grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
                 grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+
 
             }
             #container .con_div{
                 background-color:black;
             }
             .unit{
-                height : 30px;
-                width : 4px;
+                height : 35px;
+                width : 3px;
                 background-color : #94d4c7;
                 margin: auto;
                 margin-top: 27px;
@@ -45,11 +46,12 @@
 
     <body>
         <img id= "leftArrow" src="images/left_arrow.png" title= "Previous design">
+        <img id= "resetButton" src="images/restart.png" title= "Reset pattern">
+        <img id= "rightArrow" src="images/right_arrow.png" title= "Next design">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="images/restart.png" title= "Reset pattern">
-        <img id= "rightArrow" src="images/right_arrow.png" title= "Next design">
+   
 
         <p  id="caption">Spinning Lines</p>
     </body>
@@ -69,7 +71,7 @@
         var right_arrow = document.getElementById("rightArrow");
         var left_arrow = document.getElementById("leftArrow");
         right_arrow.onclick  =  function(){
-            var url = "bokeh_lens.html";
+            var url = "rising_pins.html";
             location.href = url;
         }
         left_arrow.onclick  =  function(){

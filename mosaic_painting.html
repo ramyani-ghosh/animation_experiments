@@ -20,12 +20,12 @@
             }
 
             #container{
-                position: fixed;
+                position: relative;
                 background-color: rgba(255,255,255,0.3);
-                width:700px;
-                height:700px;
-                margin-left:550px;;
-                margin-top:110px;
+                width:600px;
+                height:600px;
+                left:27% ;
+                margin-top:2%;
                 display: grid;
                 grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%  ;
                 grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
@@ -35,8 +35,8 @@
                 background-color:black;
             }
             .unit{
-                height : 35px;
-                width : 35px;
+                height : 30px;
+                width : 30px;
                 background-color: rgba(30,30,30,0.3);
                 opacity : 80%;
                 border-radius: 0;
@@ -58,11 +58,12 @@
 
     <body>
         <img id= "leftArrow" src="images/left_arrow.png" alt= "Previous design">
+        <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
+        <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
-        <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
+       
       
         <p  id="caption">Mosaic Painting</p>
     </body>
@@ -73,8 +74,8 @@
             var units = document.getElementsByClassName("unit");
             for(var i =0; i<400;i++)
             {
-                units[i].style.height = "35px";
-                units[i].style.width = "35px";
+                units[i].style.height = "30px";
+                units[i].style.width = "30px";
                 units[i].style.animationName = "none";
 
             }
@@ -83,11 +84,11 @@
         var right_arrow = document.getElementById("rightArrow");
         var left_arrow = document.getElementById("leftArrow");
         right_arrow.onclick  =  function(){
-            var url = "bath_bubbles.html";
+            var url = "shaking_twigs.html";
             location.href = url;
         }
         left_arrow.onclick  =  function(){
-            var url = "flipping_tiles.html";
+            var url = "bokeh_lens.html";
             location.href = url;
         }
 

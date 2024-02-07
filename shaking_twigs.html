@@ -24,15 +24,16 @@
             }
            
             #container{
-                position: fixed;
+                position: relative;
                 background-color: rgba(255,255,255,0.3);
-                width:700px;
-                height:700px;
-                margin-left:550px;;
-                margin-top:110px;
+                width:600px;
+                height:600px;
+                left:27% ;
+                margin-top:2%;
                 display: grid;
                 grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
                 grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+
 
             }
             #container .con_div{
@@ -40,7 +41,7 @@
             }
             .unit{
                 height : 3px;
-                width : 37px;
+                width : 30px;
                 background-color :#7d3a00;
                 margin: auto;
                 margin-top: 27px;
@@ -56,11 +57,12 @@
 
     <body>
         <img id= "leftArrow" src="images/left_arrow.png" title= "Previous design">
+        <img id= "resetButton" src="images/restart.png" title= "Reset pattern">
+        <img id= "rightArrow" src="images/right_arrow.png" title= "Next design">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="images/restart.png" title= "Reset pattern">
-        <img id= "rightArrow" src="images/right_arrow.png" title= "Next design">
+       
 
         <p  id="caption">Shaking Twigs</p>
     </body>
@@ -84,7 +86,7 @@
             location.href = url;
         }
         left_arrow.onclick  =  function(){
-            var url = "rising_pins.html";
+            var url = "mosaic_painting.html";
             location.href = url;
         }
 

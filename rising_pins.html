@@ -16,12 +16,12 @@
             }
             
             #container{
-                position: fixed;
+                position: relative;
                 background-color: rgba(255,255,255,0.3);
-                width:700px;
-                height:700px;
-                margin-left:550px;;
-                margin-top:110px;
+                width:600px;
+                height:600px;
+                left:27% ;
+                margin-top:2%;
                 display: grid;
                 grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%  ;
                 grid-template-rows: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
@@ -54,11 +54,12 @@
 
     <body>
         <img id= "leftArrow" src="images/left_arrow.png" alt= "Previous design">
+        <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
+        <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
-        <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
+        
       
         <p  id="caption">Rising Pins</p>
     </body>
@@ -79,11 +80,11 @@
         var right_arrow = document.getElementById("rightArrow");
         var left_arrow = document.getElementById("leftArrow");
         right_arrow.onclick  =  function(){
-            var url = "shaking_twigs.html";
+            var url = "index.html";
             location.href = url;
         }
         left_arrow.onclick  =  function(){
-            var url = "bokeh_lens.html";
+            var url = "spinning_lines.html";
             location.href = url;
         }
 

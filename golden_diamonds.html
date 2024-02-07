@@ -17,12 +17,12 @@
             }
             
             #container{
-                position: fixed;
+                position: relative;
                 background-color: rgba(255,255,255,0.3);
-                width:700px;
-                height:700px;
-                margin-left:550px;;
-                margin-top:110px;
+                width:600px;
+                height:600px;
+                left:27% ;
+                margin-top:2%;
                 display: grid;
                 grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
                 grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
@@ -49,11 +49,12 @@
 
     <body>
         <img id= "leftArrow" src="images/left_arrow.png" alt= "Previous design">
+        <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
+        <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="images/restart.png" alt= "Reset pattern">
-        <img id= "rightArrow" src="images/right_arrow.png" alt= "Next design">
+        
       
         <p  id="caption">Glowing Diamonds</p>
     </body>
@@ -78,7 +79,7 @@
             location.href = url;
         }
         left_arrow.onclick  =  function(){
-            var url = "blinking_dots.html";
+            var url = "bath_bubbles.html";
             location.href = url;
         }
 

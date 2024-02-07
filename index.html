@@ -10,12 +10,12 @@
            
            
             #container{
-                position: fixed;
+                position: relative;
                 background-color: rgba(255,255,255,0.3);
-                width:700px;
-                height:700px;
-                margin-left:550px;;
-                margin-top:110px;
+                width:600px;
+                height:600px;
+                left:27% ;
+                margin-top:2%;
                 display: grid;
                 grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
                 grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
@@ -32,20 +32,20 @@
                 margin-top: 27px;
             }
           
-            #leftArrow{
+            /* #leftArrow{
                 cursor:default;
-                position: absolute;
-                margin-top:470px;
+                position: fixed;
+                
                 left:40px;
                 opacity: 60%;
             }
             #rightArrow{
                 cursor: pointer;
-                position: absolute;
-                margin-top:470px;
+                position: fixed;
+                margin-top:50%;
                 right:40px;
                 opacity: 80%;
-            }
+            } */
         </style>
 
     </head>
@@ -53,11 +53,13 @@
 
     <body>
         <img id= "leftArrow" src="images/left_arrow.png" title= "Previous design">
+        <img id= "rightArrow" src="images/right_arrow.png" title= "Next design">
+        <img id= "resetButton" src="images/restart.png" title= "Reset pattern">
         <div id = "container">
             <!-- <div class="unit"> </div> -->
         </div>
-        <img id= "resetButton" src="images/restart.png" title= "Reset pattern">
-        <img id= "rightArrow" src="images/right_arrow.png" title= "Next design">
+        
+        
 
         <p  id="caption">Tilting Sticks</p>
     </body>
@@ -80,7 +82,10 @@
             var url = "blinking_dots.html";
             location.href = url;
         }
-
+        left_arrow.onclick  =  function(){
+            var url = "rising_pins.html";
+            location.href = url;
+        }
 
         function makediv()
         {

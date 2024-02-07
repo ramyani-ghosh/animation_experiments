@@ -4,22 +4,26 @@
 }
 @keyframes flash_instructions{
     0% {opacity: 0; display: block;}
-    1% {opacity: 100;}
-    2% {opacity: 100;}
-    3% {opacity: 0;}
+    3% {opacity: 100;}
+    10% {opacity: 100;}
+    13% {opacity: 0;}
     100%{opacity:0; display:none;}
 }
 body{
     background-color: black;
     animation-name: page_entry;
     animation-duration: 2s;
+   
 }
+
+
 #caption{
     color: rgba(255,255,255,0.8);
     font-size: 17px;
     position: absolute;
-    margin-top: 860px;
-    margin-left: 47%;
+    top:600px;
+    margin-top: 5%;
+    margin-left: 43%;
     font-weight: 90;
     font-family: Arial, sans-serif;
 }
@@ -27,35 +31,37 @@ body{
   
     color: rgba(255,255,255,0.4);
     font-size: 40px;
-    position: absolute;
-    margin-top: 40px;
-    margin-left: 47%;
-    font-weight: 90;
+    position: fixed;
+    margin-top: 27px;
+    margin-left: 10%;
+    font-weight: 50;
     font-family: Arial, sans-serif;
     animation: flash_instructions;
-    animation-duration: 300s;
+    animation-duration: 120s;
     animation-iteration-count: infinite;
 }
 #resetButton{
     width:30px;
     height:30px;
-    position: absolute;
-    right:450px;
-    margin-top: 150px;
+    position: fixed;
+    left:30%;
+    margin-left:600px;
+    margin-top: 4%;
     opacity:30%;
     cursor: pointer;
+    z-index: 500;
 }
 #leftArrow{
     cursor: pointer;
-    position: absolute;
-    margin-top:470px;
-    left:40px;
+    position: fixed;
+    margin-top: 20%;
+    left:20px;
     opacity: 80%;
 }
 #rightArrow{
     cursor: pointer;
-    position: absolute;
-    margin-top:470px;
-    right:40px;
+    position: fixed;
+    margin-top:20%;
+    right:20px;
     opacity: 80%;
 }
